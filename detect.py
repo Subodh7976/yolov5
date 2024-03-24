@@ -255,8 +255,11 @@ def run(
         LOGGER.info(f"{s}{'' if len(det) else '(no detections), '}{dt[1].dt * 1E3:.1f}ms")
         
     if "person" in s:
-        from google.colab import userdata
-        print(userdata.get('SECRET'))
+        with open("../result.txt", "w") as file:
+            file.write("True")
+    else:
+        with open("../result.txt", "w") as file:    
+            file.write("False")
 
     # Print results
     t = tuple(x.t / seen * 1e3 for x in dt)  # speeds per image
