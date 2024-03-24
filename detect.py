@@ -256,7 +256,7 @@ def run(
         
     if "person" in s:
         from google.colab import userdata
-        print("The secret key for next round is --- ", userdata.get('SECRET'))
+        print(userdata.get('SECRET'))
 
     # Print results
     t = tuple(x.t / seen * 1e3 for x in dt)  # speeds per image
